@@ -7,6 +7,7 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import { FunctionComponent, ReactNode, useMemo } from "react";
 import { generateSpotifyTrackUrl, generateYoutubeVideoUrl } from "@/utils";
+import { track } from "@vercel/analytics/react";
 
 export interface SongArticleProps {
   title: string;
@@ -19,8 +20,9 @@ function ExternalLink(props: {
   icon: FunctionComponent;
   href: string;
   text: string;
+  release: ReleaseDetails;
 }) {
-  const { icon: Icon, text, href } = props;
+  const { icon: Icon, text, href, release } = props;
 
   return (
     <a
@@ -31,6 +33,13 @@ function ExternalLink(props: {
         "md:-translate-x-1.5 md:hover:translate-x-0",
         "md:hover:border-theme-ig md:hover:border-opacity-100 md:rounded-lg md:p-1.5 md:transition-all"
       )}
+      onClick={() => {
+        track("article-click", {
+          ...release,
+          text,
+          href,
+        });
+      }}
     >
       <span className="md:group-hover:text-theme-ig md:transition-colors">
         {text}
@@ -50,6 +59,7 @@ function SpotifyLink(props: ReleaseDetails) {
       href={generateSpotifyTrackUrl(spotifyId)}
       icon={FaHeadphonesSimple}
       text="Listen"
+      release={props}
     />
   );
 }

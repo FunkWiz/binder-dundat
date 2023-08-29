@@ -20,3 +20,9 @@ export default function Releases() {
     </>
   );
 }
+
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}

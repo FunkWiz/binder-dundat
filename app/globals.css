@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 body {
-  background-image: url(/background.jpg);
-  background-size: cover;
+  @apply bg-cover bg-[url(/background.jpg)] bg-slate-900;
 }

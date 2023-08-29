@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Aleo } from "next/font/google";
 import { Layout } from "../components/app-layout";
 import { twMerge } from "tailwind-merge";
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={twMerge("text-slate-300", aleo.variable)}>
         <Layout>{children}</Layout>
+        <Analytics />
       </body>
     </html>
   );
