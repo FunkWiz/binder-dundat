@@ -17,7 +17,3 @@ export default function Home() {
     </>
   );
 }
-
-export function getInitialProps() {
-  return {};
-}
