@@ -18,8 +18,6 @@ export default function Home() {
   );
 }
 
-export function getStaticProps() {
-  return {
-    props: {},
-  };
+export function getInitialProps() {
+  return {};
 }

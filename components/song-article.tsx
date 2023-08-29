@@ -72,6 +72,7 @@ function YoutubeLink(props: ReleaseDetails) {
       href={generateYoutubeVideoUrl(youtubeId)}
       icon={FaVideo}
       text="Watch"
+      release={props}
     />
   );
 }
