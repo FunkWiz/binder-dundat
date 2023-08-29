@@ -4,7 +4,6 @@ import { Heading } from "./heading";
 import { SocialBar } from "./social-bar";
 import { socialItems } from "../consts";
 import { NavBar } from "./nav-bar";
-import dynamic from "next/dynamic";
 
 export function Layout(props: PropsWithChildren) {
   const { children } = props;
