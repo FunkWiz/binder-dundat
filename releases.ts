@@ -47,10 +47,10 @@ export const releases: Record<Release, ReleaseDetails> = {
   },
   fireside: {
     type: "song",
-    imageSrc: "/small-ig.jpg",
+    imageSrc: "/small-fireside.jpg",
     album: "innerGlow",
     spotifyId: "6Jcuu02stU1oKMQrYUTHyB",
-    youtubeId: "",
+    youtubeId: "GaegO1ka37Q",
     title: "Fireside",
     released: 1661547600000,
   },
